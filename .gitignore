@@ -1,0 +1,18 @@
+# Mac filesystem dust
+.DS_Store/
+.DS_Store
+
+# Linux temp files
+*~
+
+# vim
+.*.sw[a-p]
+
+# IntelliJ
+*.iml
+.idea
+
+# Gradle
+!gradle/wrapper/gradle-wrapper.jar
+.gradle
+build
