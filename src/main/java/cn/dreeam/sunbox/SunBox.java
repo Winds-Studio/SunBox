@@ -3,6 +3,7 @@ package cn.dreeam.sunbox;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
 
 public class SunBox {
 
@@ -19,8 +20,10 @@ public class SunBox {
                 // TODO: Notice: Include benchmark class you want
                 .include(cn.dreeam.sunbox.benchmarks.jmh.UsePlatformMath.class.getSimpleName())
                 .forks(1)
-                .warmupIterations(3)
-                .measurementIterations(3)
+                .warmupIterations(4)
+                .measurementIterations(10)
+                .warmupTime(TimeValue.seconds(5))
+                .measurementTime(TimeValue.seconds(4))
                 .build();
 
         new Runner(opt).run();
