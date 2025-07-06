@@ -40,25 +40,25 @@ public class PredictHalloween {
         // Gale start - predict Halloween
         long currentEpochMillis = System.currentTimeMillis();
 
-        if (currentEpochMillis > nextHalloweenEnd) {
-            // Update prediction
-
-            java.time.OffsetDateTime currentDate = java.time.OffsetDateTime.now();
-            int currentMonthOfYear = currentDate.getMonth().getValue();
-            int currentDayOfMonth = currentDate.getDayOfMonth();
-
-            java.time.OffsetDateTime nextHalloweenStartDate = currentDate.withMonth(halloweenStartMonthOfYear).withDayOfMonth(halloweenStartDayOfMonth)
+        // Update predicate
+        if (nextHalloweenEnd == 0 || currentEpochMillis >= nextHalloweenEnd) {
+            java.time.OffsetDateTime currentDate = java.time.OffsetDateTime.ofInstant(java.time.Instant.ofEpochMilli(currentEpochMillis), java.time.ZoneId.systemDefault())
                     .withHour(0).withMinute(0).withSecond(0).withNano(0); // Adjust to directly start or end at zero o'clock
 
-            if (currentMonthOfYear >= halloweenEndMonthOfYear && currentDayOfMonth >= halloweenEndDayOfMonth) {
-                nextHalloweenStartDate = nextHalloweenStartDate.plusYears(1);
+            java.time.OffsetDateTime thisHalloweenStart = currentDate.withMonth(halloweenStartMonthOfYear).withDayOfMonth(halloweenStartDayOfMonth);
+            java.time.OffsetDateTime thisHalloweenEnd = currentDate.withMonth(halloweenEndMonthOfYear).withDayOfMonth(halloweenEndDayOfMonth);
+
+            // Move to next year date if current passed
+            if (currentDate.isAfter(thisHalloweenEnd)) {
+                thisHalloweenStart = thisHalloweenStart.plusYears(1);
+                thisHalloweenEnd = thisHalloweenEnd.plusYears(1);
             }
 
-            nextHalloweenStart = nextHalloweenStartDate.toInstant().toEpochMilli();
-            nextHalloweenEnd = nextHalloweenStartDate.withMonth(halloweenEndMonthOfYear).withDayOfMonth(halloweenEndDayOfMonth).toInstant().toEpochMilli();
+            nextHalloweenStart = thisHalloweenStart.toInstant().toEpochMilli();
+            nextHalloweenEnd = thisHalloweenEnd.toInstant().toEpochMilli();
         }
 
-        return currentEpochMillis >= nextHalloweenStart;
+        return currentEpochMillis >= nextHalloweenStart && currentEpochMillis < nextHalloweenEnd;
         // Gale end - predict Halloween
     }
 }
