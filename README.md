@@ -2,6 +2,14 @@
 
 **SunBox** is a collection of benchmarks for [Leaf](https://www.leafmc.one) server software development.
 
+### Disclaimer
+It is worth knowing that these benchmarks using JMH, nanoTime, or other \
+similar practices may or may not represent the same comparison results in \
+your production environment. There are always margin errors that exist, \
+and the result data may vary across different JDK distributions, CPU brands, \
+Instruction Set Architectures, etc. Benchmarks listed in this repository \
+are just references.
+
 ## 📦 How to use
 ```bash
 ./gradlew build
