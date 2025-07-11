@@ -22,6 +22,10 @@ dependencies {
 
     // TODO: Notice: Enable if you needs to access Leaf internal
     //paperweight.devBundle("cn.dreeam.leaf", "1.21.5-R0.1-SNAPSHOT")
+
+    //implementation("com.github.oshi:oshi-core:6.8.2")
+    api("com.google.guava:guava:33.4.0-jre")
+    api("org.jetbrains:annotations:26.0.2")
 }
 
 java {
@@ -32,7 +36,9 @@ java {
 
 tasks {
     withType<JavaCompile> {
+        val compilerArgs = options.compilerArgs
         options.encoding = Charsets.UTF_8.name()
+        compilerArgs.add("--add-modules=jdk.incubator.vector") // Gale - Pufferfish - SIMD support
     }
 
     build.configure {
