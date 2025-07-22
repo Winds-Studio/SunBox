@@ -3,14 +3,7 @@ package cn.dreeam.sunbox.benchmarks.jmh;
 import cn.dreeam.sunbox.util.CraftMapColorCache;
 import cn.dreeam.sunbox.util.MapPalette;
 import cn.dreeam.sunbox.util.VectorMapPalette;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Level;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.*;
 
 import java.awt.Color;
 import java.util.Random;

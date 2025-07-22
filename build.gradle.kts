@@ -1,7 +1,7 @@
 plugins {
     `java-library`
     id("com.gradleup.shadow") version "9.0.0-rc1"
-    //id("io.papermc.paperweight.userdev") version "2.0.0-beta.17"
+    //id("io.papermc.paperweight.userdev") version "2.0.0-beta.18"
 }
 
 group = "cn.dreeam.sunbox"
@@ -12,8 +12,7 @@ repositories {
     maven("https://maven-central.storage-download.googleapis.com/maven2") // Google Mirror - For US
     //maven("https://maven.aliyun.com/repository/public") // Aliyun Mirror - For CN
 
-    maven("https://maven.nostal.ink/repository/maven-snapshots/")
-    maven("https://repo.bsdevelopment.org/releases/")
+    maven("https://maven.leafmc.one/snapshots/")
 }
 
 dependencies {
@@ -21,7 +20,7 @@ dependencies {
     annotationProcessor("org.openjdk.jmh:jmh-generator-annprocess:1.37")
 
     // TODO: Notice: Enable if you needs to access Leaf internal
-    //paperweight.devBundle("cn.dreeam.leaf", "1.21.5-R0.1-SNAPSHOT")
+    //paperweight.devBundle("cn.dreeam.leaf", "1.21.8-R0.1-SNAPSHOT")
 
     //implementation("com.github.oshi:oshi-core:6.8.2")
     api("com.google.guava:guava:33.4.0-jre")
