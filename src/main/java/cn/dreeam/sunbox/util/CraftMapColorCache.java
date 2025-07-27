@@ -17,6 +17,9 @@ import java.util.logging.Logger;
 import java.util.zip.DeflaterOutputStream;
 import java.util.zip.InflaterInputStream;
 
+/**
+ * Modified version of `org.bukkit.craftbukkit.map.CraftMapColorCache` for benchmark usage.
+ */
 public class CraftMapColorCache implements MapPalette.MapColorCache {
 
     private static final String MD5_CACHE_HASH = "E88EDD068D12D39934B40E8B6B124C83"; // 248 colors

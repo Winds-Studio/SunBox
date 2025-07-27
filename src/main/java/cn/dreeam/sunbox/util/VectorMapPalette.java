@@ -9,6 +9,9 @@ import jdk.incubator.vector.VectorSpecies;
 
 import java.awt.Color;
 
+/**
+ * Modified version of `gg.pufferfish.pufferfish.simd.VectorMapPalette` for benchmark usage.
+ */
 @Deprecated
 public class VectorMapPalette {
 

@@ -6,10 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Color;
 
 /**
- * Represents the palette that map items use.
- * <p>
- * These fields are hee base color ranges. Each entry corresponds to four
- * colors of varying shades with values entry to entry + 3.
+ * Modified version of `org.bukkit.map.MapPalette` for benchmark usage.
  */
 public final class MapPalette {
     // Internal mechanisms
