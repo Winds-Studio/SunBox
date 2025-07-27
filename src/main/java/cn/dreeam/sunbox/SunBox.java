@@ -1,6 +1,5 @@
 package cn.dreeam.sunbox;
 
-import cn.dreeam.sunbox.benchmarks.jmh.FMA;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
@@ -19,7 +18,7 @@ public class SunBox {
     private static void runJMH() throws Exception {
         Options opt = new OptionsBuilder()
                 // TODO: Notice: Include benchmark class you want
-                .include(FMA.class.getSimpleName())
+                .include("OptimizeTextColor")
                 .forks(1)
                 .warmupIterations(4)
                 .measurementIterations(10)
