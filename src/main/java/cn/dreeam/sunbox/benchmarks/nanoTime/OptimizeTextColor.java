@@ -35,7 +35,7 @@ public class OptimizeTextColor {
         long beforeEnd = System.nanoTime();
 
         System.out.printf("startsWith(\"#\") total: %f ms%n", (beforeEnd - beforeStart) / 1_000_000.0);
-        System.out.printf("charAt(0) == '#' total: %f ms%n", (afterEnd - afterStart) /1_000_000.0);
+        System.out.printf("charAt(0) == '#' total: %f ms%n", (afterEnd - afterStart) / 1_000_000.0);
     }
 
     private static void runOnce() {

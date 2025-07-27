@@ -32,6 +32,6 @@ public class SunBox {
 
     private static void runNanoTime() {
         // TODO: Notice: Include benchmark class you want
-        //OptimizeTextColor.run();
+        //cn.dreeam.sunbox.benchmarks.nanoTime.OptimizeTextColor.run();
     }
 }
