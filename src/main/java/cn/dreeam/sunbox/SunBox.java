@@ -8,6 +8,7 @@ import org.openjdk.jmh.runner.options.TimeValue;
 public class SunBox {
 
     public static void main(String[] args) {
+        runNanoTime();
         try {
             runJMH();
         } catch (Throwable t) {
@@ -17,7 +18,7 @@ public class SunBox {
 
     private static void runJMH() throws Exception {
         Options opt = new OptionsBuilder()
-                // TODO: Notice: Include benchmark class you want
+                // TODO: Notice: Include benchmark class name you want
                 .include("OptimizeTextColor")
                 .forks(1)
                 .warmupIterations(4)
@@ -27,5 +28,10 @@ public class SunBox {
                 .build();
 
         new Runner(opt).run();
+    }
+
+    private static void runNanoTime() {
+        // TODO: Notice: Include benchmark class you want
+        //OptimizeTextColor.run();
     }
 }
