@@ -16,7 +16,7 @@ Target patch: Reduce-array-allocations.patch
 public class CachedEnumValuesForLoop {
 
     // 10 enums
-    enum MockEnum {
+    private enum MockEnum {
         A, B, C, D, E, F, G, H, I, J
     }
 

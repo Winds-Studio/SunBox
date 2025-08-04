@@ -15,7 +15,7 @@ Target patch: Cache-chunk-key.patch
 @State(Scope.Thread)
 public class CacheChunkKey {
 
-    public class MockChunkPos {
+    private class MockChunkPos {
 
         private final int x;
         private final int z;
