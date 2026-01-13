@@ -1,4 +1,4 @@
-package cn.dreeam.sunbox.benchmarks.jmh.removed;
+package cn.dreeam.sunbox.benchmarks.jmh;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 /*
 Estimate running time: ~3mins
 Target patch: Optimize-player-list-for-sending-player-info.patch
+(This patch has been removed since Leaf 1.21.8)
 */
 @Deprecated(forRemoval = true, since = "1.21.8")
 @BenchmarkMode(Mode.AverageTime)

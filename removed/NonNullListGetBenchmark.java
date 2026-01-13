@@ -17,6 +17,7 @@ import javax.annotation.Nullable;
 /*
 Estimate running time: ~15-20 mins
 Target patch: Custom-NonNullList.patch
+(This patch has been removed since Leaf 1.21.8)
 
 This benchmark includes tests for NonNullList.get() operations:
 1. SingleOp: Microbenchmark measuring single get operations
@@ -41,6 +42,7 @@ If it takes too long use the values below:
     }
 
 */
+@Deprecated(forRemoval = true, since = "1.21.8")
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Thread)
