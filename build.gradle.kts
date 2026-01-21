@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    id("com.gradleup.shadow") version "9.0.0-rc1"
+    id("com.gradleup.shadow") version "9.3.1"
 }
 
 group = "cn.dreeam.sunbox"
