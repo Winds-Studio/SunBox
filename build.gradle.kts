@@ -23,7 +23,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(25)
+        languageVersion.set(JavaLanguageVersion.of(25))
     }
 }
 
