@@ -19,7 +19,7 @@ public class SunBox {
     private static void runJMH() throws Exception {
         Options opt = new OptionsBuilder()
                 // TODO: Notice: Include benchmark class name you want
-                .include("NonNullListGetBenchmark")
+                .include("BiomeLookupBenchmark")
                 .forks(1)
                 .warmupIterations(4)
                 .measurementIterations(10)

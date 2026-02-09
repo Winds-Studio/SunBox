@@ -32,6 +32,9 @@ tasks {
         val compilerArgs = options.compilerArgs
         options.encoding = Charsets.UTF_8.name()
         compilerArgs.add("--add-modules=jdk.incubator.vector") // Gale - Pufferfish - SIMD support
+        compilerArgs.add("-Xlint:-deprecation")
+        compilerArgs.add("-Xlint:-unchecked")
+        compilerArgs.add("-Xlint:-removal")
     }
 
     build.configure {
