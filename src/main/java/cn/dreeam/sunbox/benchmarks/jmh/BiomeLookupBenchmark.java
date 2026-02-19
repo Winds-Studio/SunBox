@@ -1,10 +1,14 @@
 package cn.dreeam.sunbox.benchmarks.jmh;
 
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.infra.Blackhole;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+/*
+Estimate running time: ~2mins
+Target patch: Carpet-Fixes-Optimized-getBiome-method.patch
+Target PR: https://github.com/Winds-Studio/Leaf/pull/637
+*/
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Thread)
@@ -25,20 +29,20 @@ public class BiomeLookupBenchmark {
     }
 
     @Benchmark
-    public void testFpDivision(Blackhole bh) {
+    public double testFpDivision() {
         double sum = 0;
         for (int i = 0; i < SIZE; i++) {
             sum += (double) (inputData[i] & 3) / 4.0;
         }
-        bh.consume(sum);
+        return sum;
     }
 
     @Benchmark
-    public void testTableLookup(Blackhole bh) {
+    public double testTableLookup() {
         double sum = 0;
         for (int i = 0; i < SIZE; i++) {
             sum += QUART_OFFSETS[inputData[i] & 3];
         }
-        bh.consume(sum);
+        return sum;
     }
 }
