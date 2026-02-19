@@ -36,15 +36,6 @@ public class EntityFallClipVector {
         }
     }
 
-    private Vec3 randomVec(ThreadLocalRandom rnd, double minLen, double maxLen) {
-        double x = rnd.nextDouble() - 0.5;
-        double y = rnd.nextDouble() - 0.5;
-        double z = rnd.nextDouble() - 0.5;
-        double len = Math.sqrt(x * x + y * y + z * z);
-        double targetLen = minLen + (maxLen - minLen) * rnd.nextDouble();
-        return new Vec3((x / len) * targetLen, (y / len) * targetLen, (z / len) * targetLen);
-    }
-
     @Benchmark
     public Vec3 smallVanilla() {
         Vec3 vec = smallVecs[(index++) & MASK];
@@ -81,6 +72,15 @@ public class EntityFallClipVector {
         } else {
             return pos.add(vec.x, vec.y, vec.z);
         }
+    }
+
+    private Vec3 randomVec(ThreadLocalRandom rnd, double minLen, double maxLen) {
+        double x = rnd.nextDouble() - 0.5;
+        double y = rnd.nextDouble() - 0.5;
+        double z = rnd.nextDouble() - 0.5;
+        double len = Math.sqrt(x * x + y * y + z * z);
+        double targetLen = minLen + (maxLen - minLen) * rnd.nextDouble();
+        return new Vec3((x / len) * targetLen, (y / len) * targetLen, (z / len) * targetLen);
     }
 
     public static class Vec3 {
