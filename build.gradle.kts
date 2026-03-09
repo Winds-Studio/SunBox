@@ -37,7 +37,7 @@ tasks {
         compilerArgs.add("-Xlint:-removal")
     }
 
-    build.configure {
+    build {
         dependsOn(shadowJar)
     }
 
