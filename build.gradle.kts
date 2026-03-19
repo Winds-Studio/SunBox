@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    id("com.gradleup.shadow") version "9.3.1"
+    id("com.gradleup.shadow") version "9.4.0"
 }
 
 group = "cn.dreeam.sunbox"
@@ -16,9 +16,9 @@ dependencies {
     implementation("org.openjdk.jmh:jmh-core:1.37")
     annotationProcessor("org.openjdk.jmh:jmh-generator-annprocess:1.37")
 
-    api("it.unimi.dsi:fastutil:8.5.15")
-    api("com.google.guava:guava:33.4.0-jre")
-    api("org.jetbrains:annotations:26.0.2")
+    implementation("it.unimi.dsi:fastutil:8.5.15")
+    implementation("com.google.guava:guava:33.4.0-jre")
+    implementation("org.jetbrains:annotations:26.1.0")
 }
 
 java {
