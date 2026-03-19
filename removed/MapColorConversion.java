@@ -13,7 +13,9 @@ import java.util.logging.Logger;
 /*
 Estimate running time: ~3mins
 Target patch: Vectorized-map-color-conversion.patch
+(This patch has been removed since Leaf 1.21.11)
 */
+@Deprecated(forRemoval = true, since = "1.21.11")
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
